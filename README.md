@@ -5,8 +5,7 @@ This is socket programming project to simulate chatting with a server and severa
 ## Installation
 
 1. Clone the repo
-2. In [This File](/ServerMultiThread/ProcessClient.cs)
-3. Change 
+2. In [This File](/ServerMultiThread/ProcessClient.cs) change 
 ```
 string filePath = @"D:\Tugas_Kuliah\Sistem_Oprasi_Jaringan_Komputer\FP_MultiClient\ServerMultiThread\Massage_Data.txt";
 ```

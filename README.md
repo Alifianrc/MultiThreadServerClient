@@ -10,7 +10,7 @@ This is socket programming project to simulate chatting with a server and severa
 ```
 string filePath = @"D:\Tugas_Kuliah\Sistem_Oprasi_Jaringan_Komputer\FP_MultiClient\ServerMultiThread\Massage_Data.txt";
 ```
-   to any path of the *Massage_Data.txt* file
+   to any path of the [Massage_Data.txt](/ServerMultiThread) file
 
 ## Result
 ![SS](https://user-images.githubusercontent.com/62532983/121777541-edde6f80-cbbc-11eb-99e2-5e521fed9b63.png)

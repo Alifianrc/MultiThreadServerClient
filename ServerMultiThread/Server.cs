@@ -29,12 +29,12 @@ namespace ServerMultiThread
                 clientCount++;
                 TcpClient tempSocket = ServerSocket.AcceptTcpClient();
                 ClientSocketList.Add(tempSocket);
-                string confrimMassage = "Client No: " + Convert.ToString(clientCount) + " connected!";
-                Console.WriteLine(confrimMassage);
+                string confrimMessage = "Client No: " + Convert.ToString(clientCount) + " connected!";
+                Console.WriteLine(confrimMessage);
 
                 //Class to handle each client
                 ServerMultiThread.ProcessClient client = new ProcessClient();
-                client.SaveMassage(confrimMassage);
+                client.SaveMessage(confrimMessage);
                 client.StartClient(tempSocket, Convert.ToString(clientCount), ClientSocketList);
             }
 

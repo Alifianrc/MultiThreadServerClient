@@ -24,11 +24,11 @@ namespace ServerMultiThread
             this.Id = clineNo;
             ClientSocketList = socketList;
             // Start a chatting Thread
-            Thread clientThread = new Thread(SendMassage);
+            Thread clientThread = new Thread(SendMessage);
             clientThread.Start();
         }
 
-        private void SendMassage()
+        private void SendMessage()
         {
             byte[] byteReceived = new byte[1024];
             string dataReceived =  null;
@@ -46,18 +46,18 @@ namespace ServerMultiThread
                     // Received data stream
                     NetworkStream networkStream = mySocket.GetStream();
                     //networkStream.Read(byteReceived, 0, (int)mySocket.ReceiveBufferSize);
-                    // This size is static, make a big gap between massage
+                    // This size is static, make a big gap between message
                     networkStream.Read(byteReceived, 0, 1024);
 
                     // Processing received data
                     dataReceived = Encoding.ASCII.GetString(byteReceived);
                     //dataReceived = dataReceived.Substring(0, dataReceived.IndexOf("$"));
-                    string massage = "From Client-" + Id + " : " + dataReceived;
+                    string message = "From Client-" + Id + " : " + dataReceived;
                     // Write massage in console
-                    Console.WriteLine(massage);
+                    Console.WriteLine(message);
 
                     // Save massage every single time
-                    SaveMassage(massage);
+                    SaveMessage(message);
 
                     // Send data to all client
                     dataSend = "Client-" + Id + " : " + dataReceived + " END";
@@ -85,13 +85,13 @@ namespace ServerMultiThread
             ClientSocketList.Remove(mySocket);
         }
 
-        public void SaveMassage(string newMassage)
+        public void SaveMessage(string newMessage)
         {
             // Load old massage from txt
-            List<string> MassageList = new List<string>();
+            List<string> MessageList = new List<string>();
             try
             {
-                MassageList = File.ReadAllLines(filePath).ToList();
+                MessageList = File.ReadAllLines(filePath).ToList();
             }
             catch(Exception e)
             {
@@ -99,10 +99,10 @@ namespace ServerMultiThread
             }
 
             // Add to list
-            MassageList.Add(newMassage);
+            MessageList.Add(newMessage);
 
             // Save all
-            File.WriteAllLines(filePath, MassageList);
+            File.WriteAllLines(filePath, MessageList);
         }
     }
 }

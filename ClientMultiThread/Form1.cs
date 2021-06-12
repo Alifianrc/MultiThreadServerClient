@@ -35,17 +35,17 @@ namespace ClientMultiThread
             }
 
             Printf("Client Begin!");
-            // Thread for receiving massage
-            Thread receiveThread = new Thread(RecieveMassage);
+            // Thread for receiving message
+            Thread receiveThread = new Thread(RecieveMessage);
             receiveThread.Start();
         }
 
-        private void RecieveMassage()
+        private void RecieveMessage()
         {
             while (mySocket.Connected)
             {
                 byte[] ReceiveData = new byte[DataSize];
-                string ReceiveMassage = null;
+                string ReceiveMessage = null;
                 try
                 {
                     // Try to receive stream from server
@@ -56,9 +56,9 @@ namespace ClientMultiThread
                     Printf("Error Stream : " + e);
                 }
                 // Get the massage
-                ReceiveMassage = Encoding.ASCII.GetString(ReceiveData);
+                ReceiveMessage = Encoding.ASCII.GetString(ReceiveData);
                 // Print it
-                Printf(ReceiveMassage);
+                Printf(ReceiveMessage);
             }
         }
 
@@ -75,17 +75,17 @@ namespace ClientMultiThread
 
         // Print anything in textbox 1
         // Little complicated because of Thread
-        delegate void SetTextCallBack(string massage);
-        private void Printf(string massage)
+        delegate void SetTextCallBack(string message);
+        private void Printf(string message)
         {
             if (this.InvokeRequired)
             {
                 SetTextCallBack temp = new SetTextCallBack(Printf);
-                this.Invoke(temp, new object[] { massage });
+                this.Invoke(temp, new object[] { message });
             }
-            else if (massage != "")
+            else if (message != "")
             {
-                textBox1.Text = textBox1.Text + Environment.NewLine + "-> " + massage;
+                textBox1.Text = textBox1.Text + Environment.NewLine + "-> " + message;
             }
         }
     }

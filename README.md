@@ -20,7 +20,7 @@ string filePath = @"D:\Tugas_Kuliah\Sistem_Oprasi_Jaringan_Komputer\FP_MultiClie
 6. Client receive message
 
 ## Flowchart Diagram
-![FlowChart](https://user-images.githubusercontent.com/62532983/124702619-d7f16f80-df1a-11eb-84fd-e34b0f906393.jpg)
+![Flowchart](https://user-images.githubusercontent.com/62532983/124827963-d9fe1180-dfa0-11eb-95ff-5d7fe3f2a358.jpg)
 
 ## Result
 ![SS](https://user-images.githubusercontent.com/62532983/121777541-edde6f80-cbbc-11eb-99e2-5e521fed9b63.png)

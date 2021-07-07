@@ -11,6 +11,14 @@ string filePath = @"D:\Tugas_Kuliah\Sistem_Oprasi_Jaringan_Komputer\FP_MultiClie
 ```
    to any path of the [Massage_Data.txt](/ServerMultiThread) file
 
+## Chat Flow
+1. User (in client) input message
+2. Client send message to server
+3. Server receive message
+4. Server save message in txt file
+5. Server send message to all client (including sender)
+6. Client receive message
+
 ## Flowchart Diagram
 ![FlowChart](https://user-images.githubusercontent.com/62532983/124702619-d7f16f80-df1a-11eb-84fd-e34b0f906393.jpg)
 
